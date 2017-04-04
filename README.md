@@ -13,5 +13,6 @@ Experimental Content Management System written in PHP
 -DOES NOT use SQL databases
 -Compact, quick execution, light-weight (30 kb main script)
 -Frequently upgraded and improved upon. 
--Many more features to be added!
+
+This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.
 
