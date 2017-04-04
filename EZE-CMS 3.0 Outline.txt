@@ -1,0 +1,154 @@
+=======================
+ Startup Init
+
+
+Include Global Variables (static, dynamic ?=VAR)
+Execute Global Scripting
+Load Plugins
+Check for Admin Panel Request then Init and end.
+Init Requested Page Section (?P=, ?PAGE=)
+-Load Template
+-Parse DPLC List
+-Execute Page Section Scripting
+-Insert LYT-Modules into template using DPLC List, insert output global variables into template.
+
+Script Cleanup
+
+Show output
+
+End execution
+
+======================
+
+
+
+
+
+======================
+OEM Plugins
+
+-DDoS
+-EZE-DATABASE
+
+======================
+
+
+======================
+Future Plugins
+
+-Bitcoin
+-Shopping Cart
+-Quote Request
+-Contact Form
+-Western Union
+-RSS Feeds
+-Blog
+-Forum
+-Link Directory
+-Media Player
+-Facebook
+-Newsletter
+=====================
+
+
+
+=======================
+
+
+EZE-CMS Admin Panel
+
+Global Variable Editor
+-List GV-Sets
+ -Add
+ -Remove
+ -Edit
+  -Open
+  -Save
+
+Plugin Manager
+-List Available Plugins
+ -Add
+ -Remove
+ -Edit Plugin
+  -Open
+  -Save
+  -Delete File
+
+Template Manager
+-List Available Templates
+ -Add
+ -Remove
+ -Edit Template
+  -Open
+  -Save
+  -Delete File
+  -Edit External CSS File (notepad)
+
+Layout Module Manager
+-List Available Modules
+ -Add
+ -Save
+ -Remove
+ -Edit LYT-Module
+  -Open
+  -Delete File
+
+
+
+Page Sections
+-DPLC List editor, Select Template [Save] [Cancel]
+-PSS Editor
+ -Select
+   -Add
+   -Remove
+   -Edit
+    -Open
+    -Save
+    -Delete File
+
+Database Manager
+-Open
+-Save
+-New Line
+-Delete Line
+-Edit Line (Add data, remove data)
+
+
+File Manager
+(use permissions from SS(AU), then CHMOD permissions)
+-List Folders & Files (split)
+ -Upload
+ -Download
+ -Delete
+ -Edit (OpenWYSIWYG, GIMP)
+
+
+Image Manager
+-Thumbnail (switch to FM) 
+ -Upload
+ -Download
+ -Editor
+
+Slideshows Manager
+-List
+ -New
+ -Open
+ -Save
+
+Script Settings
+-Admin Users (profile, password, permissions)
+
+=======================
+
+
+
+
+New line
+Remove line
+Edit line (add, remove data, change order)
+Parse line 5nt6 $DATABASE[line][label] = data
+=====================
+
+
+
+
