@@ -1,6 +1,6 @@
 EZE-CMS 2.0 - release (stable)
 
-EZE-CMS to allow for customization of required html/objects in
+EZE-CMS allows for customization of required html/objects in
 the admin panel but more importantly behind the scenes where it
 matters most. Keeping the template-website source code organized
 and simple to modify!
