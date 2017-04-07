@@ -21,7 +21,8 @@ $CORES_SETTINGS_CRYPTKEY = '';
 //-------------------------------------
 //^^^^ EZE-Cores Run in Debugging Mode ^^^^
 $SETTINGSMODE = '1'; // 1 = INLINE  2 = DYNAMIC FILE (EZE-Cores-DBG-Settings.var)
-	if ($SETTINGSMODE == '1'){
+	
+if ($SETTINGSMODE == '1'){
 	//-------------INLINE TRIGGER SETTINGS-------------
 	//RECOMMENDED FOR SPEED-PERFORMANCE
 	$EZECORES_Run_Debug_Mode = 'FALSE'; //RUN DEBUG MODE
@@ -32,7 +33,7 @@ $SETTINGSMODE = '1'; // 1 = INLINE  2 = DYNAMIC FILE (EZE-Cores-DBG-Settings.var
 	$tmp = file('EZE-Cores-DBG-Settings.var.txt');
 	$EZECORES_Run_Debug_Mode = str_replace(chr(13) . chr(10), '', $tmp[0]);
 	$EZECORES_Run_Debug_MTP = str_replace(chr(13) . chr(10), '', $tmp[1]);
-//-------------------------------------------------
+	//-------------------------------------------------
 }
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -157,7 +158,11 @@ function LetterToNumber($Letter){
 //$POS = BEFORE or AFTER
 function addchar($STRING, $CHAR, $INT, $POS){
 	for ($tmp1 = 1; $tmp1 <= $INT; $tmp1++) {
-	if ($POS == 'BEFORE'){ $STRING = $CHAR . $STRING; } else { $STRING = $STRING . $CHAR; }
+		if ($POS == 'BEFORE'){
+			$STRING = $CHAR . $STRING;
+		} else { 
+			$STRING = $STRING . $CHAR;
+		}
 	}
 return $STRING;
 }
@@ -168,7 +173,9 @@ return $STRING;
 function prepbeforpropersort($DATA_ARRAY, $SUBKEY_NUM, $SPECIAL_LIST){
 	for ($tmp1 = 0; $tmp1 <= count($DATA_ARRAY); $tmp1++) {
 		for ($tmp2 = 1; $tmp2 <= count($SPECIAL_LIST); $tmp2++) {
-		if ($DATA_ARRAY[$tmp1][$SUBKEY_NUM] == $SPECIAL_LIST[$tmp2]) { $DATA_ARRAY[$tmp1][$SUBKEY_NUM] = '(-' . addchar($STRING, 'a', $tmp2, 'BEFORE') . '-)' . $DATA_ARRAY[$tmp1][$SUBKEY_NUM]; }
+			if ($DATA_ARRAY[$tmp1][$SUBKEY_NUM] == $SPECIAL_LIST[$tmp2]) {
+				$DATA_ARRAY[$tmp1][$SUBKEY_NUM] = '(-' . addchar($STRING, 'a', $tmp2, 'BEFORE') . '-)' . $DATA_ARRAY[$tmp1][$SUBKEY_NUM];
+			}
 		}
 	}
 return $DATA_ARRAY;
@@ -181,8 +188,8 @@ function prepafterpropersort($DATA_ARRAY, $SUBKEY_NUM){
 	for ($tmp1 = 0; $tmp1 <= count($DATA_ARRAY); $tmp1++) {
 	$tmp2 = strpos($DATA_ARRAY[$tmp1][$SUBKEY_NUM], '-)');
 		if ($tmp2 > 0){
-		$tmp3 = strlen($DATA_ARRAY[$tmp1][$SUBKEY_NUM]);
-		$DATA_ARRAY[$tmp1][$SUBKEY_NUM] = substr($DATA_ARRAY[$tmp1][$SUBKEY_NUM], $tmp2 + 2, $tmp3 - $tmp2 - 2);
+			$tmp3 = strlen($DATA_ARRAY[$tmp1][$SUBKEY_NUM]);
+			$DATA_ARRAY[$tmp1][$SUBKEY_NUM] = substr($DATA_ARRAY[$tmp1][$SUBKEY_NUM], $tmp2 + 2, $tmp3 - $tmp2 - 2);
 		}
 	}
 	return $DATA_ARRAY;
@@ -389,9 +396,9 @@ function EZE_DBS_HELPER($DBSCOMMAND, $HELPERFILENAME, $DBSFILENAME, $DBSOPTION1,
 	
 global $EZE_DBS_OUTPUT;
 //call to EZE-DATABASE-HELPER External Sector
-//open database file, parse, return array of data
-$EZE_DBS_OUTPUT = null;
-global $LASTDBSHELPER;
+	//open database file, parse, return array of data
+	$EZE_DBS_OUTPUT = null;
+	global $LASTDBSHELPER;
 
 	if ($HELPERFILENAME <> 'LASTHELPER') {
 		$CURRENTPATH = dirname(__FILE__);
@@ -516,13 +523,13 @@ if ($setdata <> ""){
 class EZE_MODULE{
 //----LoadPlugin Global Variables----
 //-
-//------------------------------
-//----Clone Global Variables----
-var $DBG; //Passthru variable for Debug Mode
-var $ESL_OBJ;  //Source EZE_Script_Layout Object 
-var $NESL_OBJ; //Destination EZE_Script_Layout Object
-var $DATA;
-//------------------------------
+	//------------------------------
+	//----Clone Global Variables----
+	var $DBG; //Passthru variable for Debug Mode
+	var $ESL_OBJ;  //Source EZE_Script_Layout Object 
+	var $NESL_OBJ; //Destination EZE_Script_Layout Object
+	var $DATA;
+	//------------------------------
 	//--------------------------------------------
 	function LPLUGIN($DS_TITLE, $SM_TITLE, $SM_DATA){
 		//$CURRENTPATH = dirname(__FILE__);
@@ -551,7 +558,7 @@ var $DATA;
 //WARNING-DEV: ADD DECRYPTION FOR SECONDARY ENGINE
 //
 function ReMake($DATASTRING, $ENGINE_PATH, $EZECORES_Run_Debug_Mode){
-$ENGINE_OUTPUT = $DATASTRING;
+	$ENGINE_OUTPUT = $DATASTRING;
    	//-------------------  LOAD EXTERNAL SECTOR ENGINE START  -------------------
 	if ($ENGINE_PATH <> ''){
 		$engine = LOAD_FILECONTENTS($ENGINE_PATH);
@@ -574,19 +581,19 @@ return $ENGINE_OUTPUT;
 //*************** ReMake Module From Custom Engine File End ***************
 //~~~~~~~~~~~~~~~~~~~~~~~~ EXTERNAL SECTORS START ~~~~~~~~~~~~~~~~~~~~~~~~
 function LoadXPlugin($Child){
-global $EZECORES_SECTOR_ENABLED;
-global $EZECORES_SECTOR_LAYOUT_FILENAME;
-global $EZECORES_SECTOR_ENGINE_OUTPUT;
-global $EZECORES_SECTOR_LAYOUT_ENCRYPTED;
-global $EZECORES_SECTOR_LAYOUT_CRYPTKEY;
-global $EZECORES_SECTOR_PRESCRIPT_FILENAME;
-global $EZECORES_Run_Debug_MTP;
-global $EZECORES_Run_Debug_Mode;
-global $EZECORES_SECTOR_PRESCRIPT_ENCRYPTED;
-global $EZECORES_SECTOR_PRESCRIPT_CRYPTKEY;
-global $EZECORES_SECTOR_ENGINE_FILENAME;
-global $EZECORES_SECTOR_ENGINE_ENCRYPTED;
-global $EZECORES_SECTOR_ENGINE_CRYPTKEY;
+	global $EZECORES_SECTOR_ENABLED;
+	global $EZECORES_SECTOR_LAYOUT_FILENAME;
+	global $EZECORES_SECTOR_ENGINE_OUTPUT;
+	global $EZECORES_SECTOR_LAYOUT_ENCRYPTED;
+	global $EZECORES_SECTOR_LAYOUT_CRYPTKEY;
+	global $EZECORES_SECTOR_PRESCRIPT_FILENAME;
+	global $EZECORES_Run_Debug_MTP;
+	global $EZECORES_Run_Debug_Mode;
+	global $EZECORES_SECTOR_PRESCRIPT_ENCRYPTED;
+	global $EZECORES_SECTOR_PRESCRIPT_CRYPTKEY;
+	global $EZECORES_SECTOR_ENGINE_FILENAME;
+	global $EZECORES_SECTOR_ENGINE_ENCRYPTED;
+	global $EZECORES_SECTOR_ENGINE_CRYPTKEY;
 
 	if ($EZECORES_SECTOR_ENABLED['EXTERNAL']['CHILD_' . $Child]  == 'TRUE'){
 
@@ -673,7 +680,7 @@ $ACTION_ENGINE_FILENAME = '';
 $ACTION_OUTPUT = '';
 $posy = 26;
 for ($Parent = 1; $Parent <= 26; $Parent++) {
-$kid_max = 0;	
+	$kid_max = 0;	
 	if (isset($EZECORES_SECTORS_CHILD_MAX['PARENT_' . NumberToLetter($posy)]) == TRUE) { 
 		$kid_max = $EZECORES_SECTORS_CHILD_MAX['PARENT_' . NumberToLetter($posy)]; 
 	}
@@ -766,11 +773,12 @@ if ($EZECORES_SECTOR_SHOWINCORESECTOR['PARENT_' . $PARENT_LETT]['CHILD_' . $CHIL
 		$EZECORES_OUTPUT= $EZECORES_SECTOR_ENGINE_OUTPUT['PARENT_' . $PARENT_LETT]['CHILD_' . $CHILD_NUM];
 	}
 }else{
-$endtime = microtime();
-$endarray = explode(" ", $endtime);
-$endtime = $endarray[1] + $endarray[0];
-$totaltime = $endtime - $starttime;
-$totaltime = round($totaltime,5);
+	$endtime = microtime();
+	$endarray = explode(" ", $endtime);
+	$endtime = $endarray[1] + $endarray[0];
+	$totaltime = $endtime - $starttime;
+	$totaltime = round($totaltime,5);
+	
 	if ($EZECORES_Run_Debug_Mode == 'TRUE'){
 		echo "<br><b>Page Generated In:</b> " . $totaltime . " <b> Seconds</b><br></center></font></div>";
 	}
@@ -847,13 +855,19 @@ if ($EZECORES_ENABLED['CORE_' . $CORE_NUM] == 'TRUE'){
 }	
 //~~~~~~~~~~~~~~~~~~~~~~~~ CORE SECTORS END ~~~~~~~~~~~~~~~~~~~~~~~~
 
+//---------- SHOW DEBUG INFORMATION START -----------
 //echo memory_get_usage() . ' ' . memory_limit();
 $endtime = microtime();
 $endarray = explode(" ", $endtime);
 $endtime = $endarray[1] + $endarray[0];
 $totaltime = $endtime - $starttime;
 $totaltime = round($totaltime,5);
-if ($EZECORES_Run_Debug_Mode == 'TRUE'){echo "<br><center><b>Page Generated In:</b> " . $totaltime . " <b>Seconds</b><br></center></font></div><br>" . chr(13) . chr(10); }
+
+if ($EZECORES_Run_Debug_Mode == 'TRUE'){
+	echo "<br><center><b>Page Generated In:</b> " . $totaltime . " <b>Seconds</b><br></center></font></div><br>" . chr(13) . chr(10);
+}
+//---------- SHOW DEBUG INFORMATION END -----------
+
 $EZECORES_OUTPUT_DATA = str_replace("\&#39;", "&#39;",  $EZECORES_OUTPUT_DATA);
 echo $EZECORES_OUTPUT_DATA;
 
