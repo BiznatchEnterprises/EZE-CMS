@@ -20,13 +20,14 @@ if ($PARENT_LETT == "A"){
 			$CD = $DEFAULT_PAGEID;
 		}
 		//======== USE DEFAULT PAGE-ID WHEN SUB-COMMAND (PAGE) END ========
-
+echo $TEMPLATES[1][1];
 		//-------------------
 		// LOAD ALL USED Dynamic Plugin Container Modules & TEMPLATE USED FOR THIS PAGE
-		for ($tmp1 = 1; $tmp1 <= count($PAGES); $tmp1++) {
+		for ($tmp1 = 0; $tmp1 <= count($PAGES); $tmp1++) {
 		
 			if ($CD == $PAGES[$tmp1][1]){ 
 			$PTEMPLATE = $PAGES[$tmp1][2];
+			echo $PTEMPLATE;
 			$DPLC[1] = str_replace('%01%', '', $PAGES[$tmp1][3]);
 			$DPLC[2] = str_replace('%02%', '', $PAGES[$tmp1][4]);
 			$DPLC[3] = str_replace('%03%', '', $PAGES[$tmp1][5]);
@@ -65,16 +66,17 @@ if ($PARENT_LETT == "A"){
 
 		$tmp1 = 0;
 		$tmp2 = 0;
+		$dplcx = 0;
 		for ($dplcn = 1; $dplcn <= $dplcu; $dplcn++) {
-			if (isset($DPLCS_USED[$dplcu]) == TRUE){
+			if (isset($DPLCS_USED[$dplcn]) == TRUE){
 
-				$tmpc = count($DPLCS_USED[$dplcu]);
+				$tmpc = count($DPLCS_USED[$dplcn]);
 
 					if ($tmpc > 0){
 
 						for ($tmp1 = 0; $tmp1 <= $tmpc - 1; $tmp1++) {
 							$TMPDPLC - '';
-							$TMPDPLC = str_replace('#{', '', $DPLCS_USED[$dplcu]);
+							$TMPDPLC = str_replace('#{', '', $DPLCS_USED[$dplcn]);
 							$TMPDPLC = str_replace('}#', '', $TMPDPLC);
 	
 							if ($TMPDPLC <> ''){
@@ -102,7 +104,8 @@ if ($PARENT_LETT == "A"){
 								if ($STATUS == 'E'){	
 									// GET LAYOUT FORMAT AND DETAILS
 									// GET CONTENTS
-									$DPLCOPT01 = $DPLCOPT01 . LOAD_LYTMODULE($TMPDPLC, 1,  $FORMAT);
+									$dplcx = $dplcx + 1;
+									$DPLCS_RAW[$dplcx] = $DPLCS_RAW[$dplcx] . LOAD_LYTMODULE($TMPDPLC, 1,  $FORMAT);
 		
 								}	
 	
@@ -116,23 +119,30 @@ if ($PARENT_LETT == "A"){
 
 
 		//---------- LOAD TEMPLATE HTML START -------
-		if (isset($TEMPLATES) == TRUE) {
-			if (isset($PTEMPLATE) == TRUE){
-			
+		
+			echo $PTEMPLATE;
+		
 				// Open Template File send to OUTPUT BUFFER
 				for ($tmp1 = 1; $tmp1 <= count($TEMPLATES); $tmp1++) {
-			
-					if ($TEMPLATES[$tmp1][1] == $PTEMPLATE){ 
-						$FTEMPLATE = $TEMPLATES[$tmp1][2]; $tmp1 = count($TEMPLATES);
+						if (isset($PTEMPLATE) == TRUE){
+							if ($TEMPLATES[$tmp1][1] == $PTEMPLATE){
+						
+							$FTEMPLATE = $TEMPLATES[$tmp1][2];
+							$tmp1 = count($TEMPLATES);
+						
+							}
+						
+					
+	echo $FTEMPLATE;
+				
+						if ($FTEMPLATE <> ''){ 
+							$ACTION_CONTENT = LOAD_FILECONTENTS('ExternalSectors/CMS Templates/' . $FTEMPLATE);
+						} 
+
 					}
-			
-				}	
-	
-			if ($FTEMPLATE <> ''){ $ACTION_CONTENT = LOAD_FILECONTENTS('ExternalSectors/CMS Templates/' . $FTEMPLATE); } 
-			}
-		}
+		
 		//---------- LOAD TEMPLATE HTML END -------
- 
+			}
  
 	}
 }

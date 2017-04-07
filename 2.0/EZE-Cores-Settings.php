@@ -256,10 +256,8 @@ $SLIDESHOWS_FOLDER = str_replace(chr(13) . chr(10), '', $EZECMSSET[7]);  //HOME 
 $DEFAULT_PAGEID = str_replace(chr(13) . chr(10), '', $EZECMSSET[8]);   //DEFAULT ID IN CONTENTS DATABASE (First Page loaded when CD = '')
 
 //------- IF NO SUB-COMMAND IS SPECIFIED USE DEFAULT FROM CONFIG START -------
-if (isset($CD) == TRUE){
-	if ($CD == ''){
-		$CD = $DEFAULT_PAGEID;
-	}
+if (isset($CD) == FALSE){
+	$CD = $DEFAULT_PAGEID;
 }
 //------- IF NO SUB-COMMAND IS SPECIFIED USE DEFAULT FROM CONFIG END -------
 
