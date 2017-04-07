@@ -1,0 +1,111 @@
+<form method="POST" action="##PAGEPATH##index.php" name="RTEDemo" onsubmit="return submitForm();">
+
+<input type="hidden" name="C" value="ADMIN">
+<input type="hidden" name="CD" value="LYT-MD">
+<input type="hidden" name="SID" value="##SID##">
+
+	<p align="center"><b><font color="#800000" size="4">##PRODUCT## ##VERSION##<br></font>
+<font color="#800000">[Easy Content Management System]</font></b></p>
+	<p align="center"><u><font size="4"><b>LYT-Module</b></font></u><b><u><font size="4">
+	</font></u></b><u><font size="4"><b>Creator:</b></font></u><br>
+	<b><br>
+	LYT-M ID:</b> 
+	<br>
+	<input type="text" name="FORMEV[1]" size="19" style="border: 1px solid #000000; text-align:center">
+	</p>
+
+
+	<p align="center">
+	<b>Format:
+	</b><select size="1" name="FORMEV[2]">
+	<option value="HTML" selected>HTML</option>
+	<option value="Plain-Text">Plain-Text</option>
+	</select> <b><br>
+	Status:
+	</b><select size="1" name="FORMEV[3]">
+	<option value="E" selected>Enabled</option>
+	<option value="D">Disabled</option>
+	</select><center>
+	<b>Contents:<br>
+	</b>
+	
+	<center>
+	
+	<!-- START Demo Code -->
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function submitForm() {
+	//make sure hidden and iframe values are in sync for all rtes before submitting form
+	updateRTEs();
+	
+	//change the following line to true to submit form
+	
+	return true;
+}
+
+//Usage: initRTE(imagesPath, includesPath, cssFile, genXHTML, encHTML)
+initRTE("##PAGEPATH##ExternalSectors/cbrte/images/", "##PAGEPATH##ExternalSectors/cbrte/", "", true);
+
+
+//-->
+</script>
+<noscript><p><b>Javascript must be enabled to use this form.</b></p></noscript>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+//build new richTextEditor
+var f = new richTextEditor('f');
+f.html = 'here&#39;s the <em\>preloaded\<\/em\>&nbsp;\<b\>content<\/b\>';
+
+//enable all commands for demo
+f.cmdFormatBlock = true;
+f.cmdFontName = true;
+f.cmdFontSize = true;
+f.cmdIncreaseFontSize = true;
+f.cmdDecreaseFontSize = true;
+
+f.cmdBold = true;
+f.cmdItalic = true;
+f.cmdUnderline = true;
+f.cmdStrikethrough = true;
+
+
+f.cmdJustifyLeft = true;
+f.cmdJustifyCenter = true;
+f.cmdJustifyRight = true;
+f.cmdJustifyFull = true;
+
+f.cmdInsertHorizontalRule = true;
+f.cmdInsertOrderedList = true;
+f.cmdInsertUnorderedList = true;
+
+f.cmdOutdent = true;
+f.cmdIndent = true;
+f.cmdForeColor = true;
+f.cmdHiliteColor = true;
+f.cmdInsertLink = true;
+f.cmdInsertImage = true;
+f.cmdInsertSpecialChars = true;
+f.cmdInsertTable = true;
+f.cmdSpellcheck = true;
+
+f.cmdCut = true;
+f.cmdCopy = true;
+f.cmdPaste = true;
+f.cmdUndo = true;
+f.cmdRedo = true;
+f.cmdRemoveFormat = true;
+f.cmdUnlink = true;
+
+f.toggleSrc = true;
+
+
+
+f.build();
+//-->
+</script>
+<br>
+	<input type="submit" value="Create New" name="CDX">
+</form>
+<br><br>

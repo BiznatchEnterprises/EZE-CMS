@@ -1,0 +1,249 @@
+/* CSS Document */
+
+body {
+    font: 80%/1.6 arial, helvetica, sans-serif;
+    color: #C7CDD4;
+    background: #041A36;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+/* Universal stuff */
+
+
+a { color: #E1F02D }
+a:hover { text-decoration: none }
+strong { color: white }
+abbr, acronym, q:before, q:after {
+    content: "";
+    border: none;
+    font-style: normal;
+}
+pre {
+    width: 90%;
+}
+code {
+    font: 1em "Courier New", Courier, monospace;
+    color: #900;
+}
+a img {
+    border: 0;
+}
+[title] { border-bottom: 1px dotted #999; }
+.accessaid {
+    position: absolute;
+    left: -999em;
+}
+.warning { color: red }
+
+
+
+/* Header stuff */
+
+
+
+#header {
+    height: 92px;
+    background: url(index_files/circles111.gif) bottom left repeat-x;
+    text-transform: lowercase;
+    border-bottom: 1px solid #D8E7FE;
+}
+
+#header * {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+#header ul {
+    list-style: none;
+    position: absolute;
+    top: -0.8em;
+    float: right;
+    right: 2%;
+   
+}
+#header li {
+    display: inline
+    }
+#header ul a, #header em {
+    color: white;
+    text-decoration: none;
+    padding-top: 40px;
+    height: 38px;
+    padding-bottom: 0.8em;
+    float: left;
+    padding-right: 1em;
+}
+#header span {
+    border-left: 1px solid #355073;
+    padding: 0 0.5em;
+}
+#header .alt a {
+    color: #E1F02D;
+    font-weight: bold;
+}
+#header .first span { border: 0 }
+#header a:hover { border-bottom: 2px solid }
+
+
+#header div {
+    background: left no-repeat;
+    height: 111px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 80px;
+    left: 0;
+    border-top: 1px solid #D8E7FE;
+}
+
+
+
+/*Content Stuff*/
+
+
+
+
+#content {
+    position: relative;
+    max-width: 90em;
+    color: #000000;
+}
+#pagesection1 {
+    background: #162A44 url(index_files/fade3.gif) top right repeat-x;
+    padding-top: 11px;
+    border-top: 11px solid #041A36;
+    padding-bottom: 2em;
+}
+#primary{
+    Background-color: #FFFFFF;
+}
+.ss1 {
+    width: 95%;
+    background: #203755 url(index_files/fade2.gif) top right repeat-x;
+    position: relative;
+}
+.ss11 {
+    background: url(index_files/corner_br_m.gif) bottom right no-repeat;
+    position: relative;
+}
+.ss12 {
+    background: url(index_files/corner_tr_m.gif) top right no-repeat;
+    padding-top: 11px;
+    position: relative;
+}
+.ss2 {
+    width: 66.6666%;
+    padding-bottom: 1em;
+    position: relative;
+}
+
+h1 {
+    margin: 0 5%;
+    font-size: 1em;
+    letter-spacing: -1000em;
+    line-height: 39px; height: 39px;
+    background-repeat: no-repeat;
+    border-top: 2em solid white;
+}
+h1 span {
+    height: 39px;
+    float: left;
+    width: 0;
+    overflow: hidden;
+}
+h2, h3 { clear: left }
+#primary h2, #primary h3 {
+    margin: 0 5%;
+    color: #041A36;
+    font-size: 1.4em;
+    margin-top: 2.5em;
+    font-size: 1.7em;
+}
+#primary h3 {
+    color: #476FA1;
+    font-size: 1.1em;
+}
+#pagesection1 p {
+    padding-right: 7%;
+    margin-left: 5%;
+}
+#para1 {
+    clear: left;
+    font-size: 1.35em;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #476FA1;
+}
+p#paralast {
+    background: white url(index_files/corner_br_white.gif) bottom right no-repeat;
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+    position: relative;
+    top: 1px;
+    padding-left: 5%;
+    margin-left: 0;
+}
+#primary a {
+    color: #7BA440;
+    font-weight: bold;
+}
+#primary p {
+    margin-top: 0;
+}
+#primary strong {
+    color: #476FA1;
+}
+#primary ul {
+    margin: 0 5% 1em 5%;
+    padding: 0;
+   
+    list-style: none;
+}
+#primary li {
+    background:  url(index_files/bullet.gif) 0 0.5em no-repeat;
+    padding: 0 0 0.5em 16px;
+    margin-left: 2%;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 1em 7%;
+    border: 1px solid #355073;
+}
+td, th {
+    border: solid #355073;
+    border-width: 0 1px;
+    text-align: center;
+    padding: 0.1em 2em;
+}
+th {
+    color: white;
+    border: none;
+    background: #355073;
+    border-right: 1px solid #EAF3FF;
+}
+.lth { border: 0 }
+tr.alt {
+    background: #EAF3FF;
+}
+caption {
+    font-weight: bold;
+    margin: 0 5% 0.2em 5%;
+    text-align: left;
+}
+
+#pagesection2 {
+	position: absolute;
+	top: 23px;
+	width: 31.66666%;
+	left: 63.33333%;
+	padding-top: 14px;
+}
+.home #pagesection2 {
+	width: 25%;
+	left: 50%;
+}
