@@ -1,2 +1,2 @@
 <?php exit; ?>
-<ææ[TemplateName]ææ[TemplatePath]ææ>
+<ææ[default]ææ[default/index.html]ææ>

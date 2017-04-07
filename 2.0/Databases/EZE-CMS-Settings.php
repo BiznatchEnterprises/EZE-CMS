@@ -2,7 +2,7 @@
 FALSE
 2
 80
-nixer:81/bituminex/
+test.com
 http://
 https://
 Extras/
@@ -24,4 +24,4 @@ index, follow, all
 DOCUMENT
 text/html; charset=utf-8
 Wed, 26 Nov 2008 14:25:27 GMT
-justinpercy@gmail.com
+test@email.com
