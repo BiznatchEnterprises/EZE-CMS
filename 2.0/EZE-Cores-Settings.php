@@ -709,16 +709,17 @@ $EZECMS_TEMPLATEPATH = 'Databases/EZE-CMS-TEMPLATES.php';
 $EZECMS_PAGESPATH = 'Databases/EZE-CMS-PAGES.php';
 $EZECMS_LYTMDPATH = 'Databases/EZE-CMS-LYT-MDs.php';
 $EZECMS_SLDSHWDPATH = 'Databases/SLIDESHOWS.php';
+$DEFAULT_DATABASEHELPER = "ExternalSectors/PHP-MODULES/EZE-DATABASE-HELPER-BETA.php";
 
 //EZE_DBS_HELPER('ReadDBPS', 'ExternalSectors/PHP-MODULES/EZE-DATABASE-HELPER-BETA.php', $CURRENTPATH . '/Databases/NAVIGATION.php', '', '', '', '', '', $EZECORES_Run_Debug_Mode . $EZECORES_Run_Debug_MTP);
 //if ($EZE_DBS_OUTPUT[0][0] == 'Parse Database Completed'){ $CATEGORIES = $EZE_DBS_OUTPUT; } else { $CATEGORIES = $EZE_DBS_OUTPUT[0][0]; }
-	EZE_DBS_HELPER('ReadDBPS', 'ExternalSectors/PHP-MODULES/EZE-DATABASE-HELPER-BETA.php', $EZECMS_TEMPLATEPATH, '', '', '', '', '', $EZECORES_Run_Debug_Mode . $EZECORES_Run_Debug_MTP);
+	EZE_DBS_HELPER('ReadDBPS', $DEFAULT_DATABASEHELPER, $EZECMS_TEMPLATEPATH, '', '', '', '', '', $EZECORES_Run_Debug_Mode . $EZECORES_Run_Debug_MTP);
 	if ($EZE_DBS_OUTPUT[0][0] == 'Parse Database Completed'){ $TEMPLATES = $EZE_DBS_OUTPUT; } else { $TEMPLATES = $EZE_DBS_OUTPUT[0][0]; }
 
-	EZE_DBS_HELPER('ReadDBPS', 'LASTHELPER', $EZECMS_PAGESPATH, '', '', '', '', '', $EZECORES_Run_Debug_Mode . $EZECORES_Run_Debug_MTP);
+	EZE_DBS_HELPER('ReadDBPS', $DEFAULT_DATABASEHELPER, $EZECMS_PAGESPATH, '', '', '', '', '', $EZECORES_Run_Debug_Mode . $EZECORES_Run_Debug_MTP);
 	if ($EZE_DBS_OUTPUT[0][0] == 'Parse Database Completed'){ $PAGES = $EZE_DBS_OUTPUT; } else { $PAGES = $EZE_DBS_OUTPUT[0][0]; }
-	
-	EZE_DBS_HELPER('ReadDBPS', 'LASTHELPER', $EZECMS_LYTMDPATH, '', '', '', '', '', $EZECORES_Run_Debug_Mode . $EZECORES_Run_Debug_MTP);
+
+	EZE_DBS_HELPER('ReadDBPS', $DEFAULT_DATABASEHELPER, $EZECMS_LYTMDPATH, '', '', '', '', '', $EZECORES_Run_Debug_Mode . $EZECORES_Run_Debug_MTP);
 	if ($EZE_DBS_OUTPUT[0][0] == 'Parse Database Completed'){ $LYTMD = $EZE_DBS_OUTPUT; } else { $LYTMD = $EZE_DBS_OUTPUT[0][0]; }
 //############ EZE-DATABASE-HELPER GLOBAL DATABASE CALLS END ##############
 
